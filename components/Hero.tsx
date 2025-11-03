@@ -6,13 +6,15 @@ import { ArrowDown } from 'lucide-react'
 const Hero = () => {
   const scrollToForm = () => {
     const element = document.getElementById('contact-form')
-    element?.scrollIntoView({ behavior: 'smooth' })
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' })
+    }
   }
 
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-primary-50 via-white to-accent-50">
-      {/* Background pattern */}
-      <div className="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"%3E%3Cg fill="none" fill-rule="evenodd"%3E%3Cg fill="%239ca3af" fill-opacity="0.05"%3E%3Cpath d="M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z"/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')] opacity-50"></div>
+      {/* Background pattern - simplified without complex SVG */}
+      <div className="absolute inset-0 opacity-50"></div>
 
       <div className="relative z-10 max-width-container section-padding text-center">
         <motion.div
@@ -62,9 +64,9 @@ const Hero = () => {
       </div>
 
       {/* Decorative elements */}
-      <div className="absolute top-20 left-10 w-20 h-20 bg-accent-400 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob"></div>
-      <div className="absolute top-40 right-10 w-20 h-20 bg-primary-400 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob animation-delay-2000"></div>
-      <div className="absolute bottom-20 left-20 w-20 h-20 bg-accent-300 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob animation-delay-4000"></div>
+      <div className="absolute top-20 left-10 w-20 h-20 bg-accent-400 rounded-full mix-blend-multiply filter blur-xl opacity-20"></div>
+      <div className="absolute top-40 right-10 w-20 h-20 bg-primary-400 rounded-full mix-blend-multiply filter blur-xl opacity-20"></div>
+      <div className="absolute bottom-20 left-20 w-20 h-20 bg-accent-300 rounded-full mix-blend-multiply filter blur-xl opacity-20"></div>
     </section>
   )
 }
